@@ -1,0 +1,21 @@
+nombre,edad,genero,deporte,tiene_trabajo
+Aquiles Brinco,41,M,1,false
+Armando Casas,42,M,2,true
+Elsa Pato,43,F,3,false
+Elba Zurita,44,F,4,true
+Marcia Ana,45,F,5,false
+Rosamel Fierro,46,M,0,true
+Elvis Tek,47,M,1,false
+Benito Camelo,48,M,2,true
+Elba Lazo,49,F,3,false
+Pato Carlos Bustos de la Vaca,50,M,4,true
+Aquiles Baeza,51,M,5,false
+Susana Horias,25,F,0,true
+Angelica Galindo,25,F,1,false
+Armando Mocha,25,M,2,true
+Elsa Pallo,25,F,3,false
+Francisca Campos,25,F,4,true
+Héctor Rojas,25,M,10,false
+Alejandro Arévalo,25,M,0,true
+Andrés Trozado,25,M,6,false
+Helen Chufe,34,F,8,true

@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.12.0
+    volumes:
+       - elastic_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: "single-node"
+    networks:
+      - elk
+  logstash:
+    image: logstash:7.12.0
+    volumes:
+      # - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./pipeline:/usr/share/logstash/pipeline
+      - ./data:/var/log/mydata
+    ports:
+      - "5000:5000"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      # ELASTICSEARCH_URL: "http://elasticsearch:9200"
+      # ELASTICSEARCH_HOSTS: "http://elasticsearch:9200"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+  kibana:
+    image: kibana:7.12.0
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+networks:
+  elk:
+    driver: bridge
+volumes:
+  elastic_data:
+    driver: local

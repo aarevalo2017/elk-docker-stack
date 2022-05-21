@@ -1,0 +1,12 @@
+PUT /ejerciciofinal
+{
+  "mappings": {
+    "properties": {
+      "nombre": { "type": "text"},
+      "edad": { "type": "integer"},
+      "genero": { "type": "text"},
+      "deporte": { "type": "integer"},
+      "tiene_trabajo": { "type": "boolean"}
+    }
+  }
+}
